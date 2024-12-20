@@ -43,7 +43,8 @@ app.get("/api/users/:id/userSkills", async (req, res, next) => {
 //DELETE /api/users/:userId/userSkills/:id
 app.delete("/api/users/:userId/userSkills/:id", async (req, res, next) => {
   try {
-    await deleteUserSkill({ id: req.params.id, user_id: req.params.userId});
+    await deleteUserSkill({ id: req.params.id, user_id: req.params.userId });
+
     res.sendStatus(204);
   } catch (ex) {
     next(ex);

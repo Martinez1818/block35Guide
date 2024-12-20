@@ -82,11 +82,11 @@ const fetchUserSkills = async(user_id) => {
     return response.rows;
 }
 
-const deleteUserSkill = async(user_id, id) => { 
+const deleteUserSkill = async({user_id, id}) => { 
     const SQL = `
         DELETE 
         FROM user_skills
-        WHERE user_id = $1 AND user_id = $2;
+        WHERE user_id = $1 AND id = $2;
     `;
     await client.query(SQL, [user_id, id]);
 }
